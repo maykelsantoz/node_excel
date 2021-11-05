@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Outsourcing {
+  id              String @id @default(uuid())
+  req             String
+  orc             String
+  abertura        String
+  hora_abertura   String
+  contato         Int
+  nome_do_cliente String
+  titulo          String
+  equipamento     String
+  serial          String
+  solicitante     String
+  telefone        String
+  email           String
+  cidade          String
+  uf              String
+  status          String
+  os              String
+  previsao        String
+  sla             Int
+
+  @@map("outsourcing")
+}
